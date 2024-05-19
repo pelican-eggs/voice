@@ -1,4 +1,4 @@
-# [Voice Servers](/voice_servers)
+# Voice Servers
 
 * [Lavalink](/lavalink)
 * [Teamspeak_ARM64](/teamspeak_ARM64)
