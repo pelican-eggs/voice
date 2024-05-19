@@ -1,5 +1,5 @@
-# [Voice Servers](/voice_servers)
+# Voice Servers
 
-* [Lavalink](/voice_servers/lavalink)
-* [Teamspeak_ARM64](/voice_servers/teamspeak_ARM64)
-* [TS3-Manager](/voice_servers/ts3_manager)
+* [Lavalink](/lavalink)
+* [Teamspeak_ARM64](/teamspeak_ARM64)
+* [TS3-Manager](/ts3_manager)
