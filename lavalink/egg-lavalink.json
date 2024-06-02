@@ -1,12 +1,13 @@
 {
-    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PANEL",
     "meta": {
         "version": "PTDL_v2",
         "update_url": null
     },
-    "exported_at": "2023-08-04T08:40:49+02:00",
+    "exported_at": "2024-06-02T14:30:02+00:00",
     "name": "Lavalink",
     "author": "damuffin36@gmail.com",
+    "uuid": "33c08e81-a3d0-4ec4-a65b-cea6bc1b8424",
     "description": "A standalone audio sending node based on Lavaplayer and Koe. Allows for sending audio without it ever reaching any of your shards.\r\nDescription taken from https:\/\/github.com\/freyacodes\/Lavalink",
     "features": null,
     "docker_images": {
@@ -36,6 +37,7 @@
             "user_viewable": true,
             "user_editable": true,
             "rules": "required|string",
+            "sort": null,
             "field_type": "text"
         },
         {
@@ -46,6 +48,7 @@
             "user_viewable": false,
             "user_editable": false,
             "rules": "required|string",
+            "sort": null,
             "field_type": "text"
         },
         {
@@ -56,6 +59,7 @@
             "user_viewable": false,
             "user_editable": false,
             "rules": "required|string",
+            "sort": null,
             "field_type": "text"
         }
     ]
