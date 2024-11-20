@@ -1,15 +1,14 @@
 {
-    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PANEL",
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
     "meta": {
         "version": "PTDL_v2",
-        "update_url": "https:\/\/raw.githubusercontent.com\/pelican-eggs\/voice\/refs\/heads\/main\/ts3_manager\/egg-t-s3-manager.json"
+        "update_url": null
     },
-    "exported_at": "2024-10-26T06:20:58+00:00",
+    "exported_at": "2024-10-26T08:17:30+02:00",
     "name": "TS3 Manager",
     "author": "eggs@goover.dev",
-    "uuid": "f9e543c3-e8a5-4fb8-954b-f4b64c705ee3",
     "description": "The Open Source Webinterface For TeamSpeak Servers",
-    "features": [],
+    "features": null,
     "docker_images": {
         "ghcr.io\/parkervcp\/yolks:debian": "ghcr.io\/parkervcp\/yolks:debian"
     },
@@ -36,12 +35,7 @@
             "default_value": "joni1802\/ts3-manager",
             "user_viewable": false,
             "user_editable": false,
-            "rules": [
-                "required",
-                "string",
-                "max:50"
-            ],
-            "sort": 1,
+            "rules": "required|string|max:50",
             "field_type": "text"
         },
         {
@@ -51,12 +45,7 @@
             "default_value": "latest",
             "user_viewable": true,
             "user_editable": true,
-            "rules": [
-                "required",
-                "string",
-                "max:30"
-            ],
-            "sort": 2,
+            "rules": "required|string|max:30",
             "field_type": "text"
         },
         {
@@ -66,12 +55,7 @@
             "default_value": "ts3-manager-linux-x64",
             "user_viewable": false,
             "user_editable": false,
-            "rules": [
-                "required",
-                "string",
-                "max:50"
-            ],
-            "sort": 3,
+            "rules": "required|string|max:50",
             "field_type": "text"
         }
     ]
