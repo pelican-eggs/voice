@@ -2,6 +2,9 @@
 
 ## From their [Website](https://www.teamspeak.com/)
 
+# Originally made by TraeF, maintained by JoanFo1456.
+
+# Remember that at this moment, TeamSpeak6 is on beta, so it can fail.
 
 ## Server Ports
 
