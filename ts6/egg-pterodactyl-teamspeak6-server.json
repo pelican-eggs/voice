@@ -4,29 +4,26 @@
         "version": "PTDL_v2",
         "update_url": null
     },
-    "exported_at": "2025-07-05T17:46:50+00:00",
+    "exported_at": "2026-01-02T22:27:12+00:00",
     "name": "Teamspeak6 Server",
     "author": "161775222+JoanFo1456@users.noreply.github.com",
     "description": "VoIP software designed with security in mind, featuring crystal clear voice quality, endless customization options, and scalabilty up to thousands of simultaneous users.",
-    "tags": [
-        "voice"
-    ],
-    "features": [],
+    "features": null,
     "docker_images": {
-        "Debian": "ghcr.io\/parkervcp\/yolks:debian"
+        "Debian": "ghcr.io\/pelican-eggs\/yolks:debian"
     },
     "file_denylist": [],
     "startup": ".\/tsserver --filetransfer-port {{TSSERVER_FILE_TRANSFER_PORT}} --query-http-port {{TSSERVER_QUERY_HTTP_PORT}} --query-ssh-port {{TSSERVER_QUERY_SSH_PORT}} --default-voice-port {{SERVER_PORT}}",
     "config": {
         "files": "{}",
-        "startup": "{\r\n    \"done\": \"listening on 0.0.0.0:\"\r\n}",
+        "startup": "{\n    \"done\": \"listening on 0.0.0.0:\"\n}",
         "logs": "{}",
         "stop": "^C"
     },
     "scripts": {
         "installation": {
             "script": "#!\/bin\/ash\r\n\r\nset -euo pipefail\r\n\r\nREPO=\"teamspeak\/teamspeak6-server\"\r\nARCH=\"linux_amd64\"\r\nTARGET_DIR=\"\/mnt\/server\"\r\n\r\n\r\ngh_api() {\r\n    curl -sL \"$1\"\r\n}\r\n\r\nif [ -z \"${TS_VERSION:-}\" ] || [ \"${TS_VERSION}\" = \"latest\" ]; then\r\n    echo \"► Fetching latest Teamspeak 6 release info from GitHub…\"\r\n    RELEASE_JSON=\"$(gh_api \"https:\/\/api.github.com\/repos\/${REPO}\/releases\" | jq '.[0]')\"\r\nelse\r\n    echo \"► Fetching release info for tag v${TS_VERSION}…\"\r\n    RELEASE_JSON=\"$(gh_api \"https:\/\/api.github.com\/repos\/${REPO}\/releases\" \\\r\n        | jq --arg tag \"v${TS_VERSION}\" -c '[.[] | select(.tag_name==$tag)][0]')\"\r\nfi\r\n\r\nASSET_URL=\"$(echo \"$RELEASE_JSON\" \\\r\n    | jq -r --arg arch \"$ARCH\" '.assets[]\r\n        | select(.name | test(\"linux_amd64.*\\\\.tar\\\\.bz2$\"))\r\n        | .browser_download_url')\"\r\n\r\nif [ -z \"$ASSET_URL\" ] || [ \"$ASSET_URL\" = \"null\" ]; then\r\n    echo \"✗ No linux_amd64 tarball found in this release.\"\r\n    exit 1\r\nfi\r\n\r\necho \"► Downloading and extracting: $ASSET_URL\"\r\n\r\ncd \"$TARGET_DIR\"\r\ngh_api \"$ASSET_URL\" | tar -xvj --strip-components=1\r\n",
-            "container": "ghcr.io\/parkervcp\/installers:alpine",
+            "container": "ghcr.io\/pelican-eggs\/installers:alpine",
             "entrypoint": "ash"
         }
     },
