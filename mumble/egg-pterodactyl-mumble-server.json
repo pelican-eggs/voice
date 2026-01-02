@@ -1,0 +1,42 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v2",
+        "update_url": null
+    },
+    "exported_at": "2026-01-02T22:05:23+00:00",
+    "name": "Mumble Server",
+    "author": "panel@example.com",
+    "description": "Mumble is an open source, low-latency, high quality voice chat software primarily intended for use\nwhile gaming.",
+    "features": null,
+    "docker_images": {
+        "Mumble": "ghcr.io\/pelican-eggs\/yolks:voice_mumble"
+    },
+    "file_denylist": [],
+    "startup": "mumble-server -fg -ini murmur.ini",
+    "config": {
+        "files": "{\n    \"murmur.ini\": {\n        \"parser\": \"ini\",\n        \"find\": {\n            \"database\": \"\\\/home\\\/container\\\/murmur.sqlite\",\n            \"logfile\": \"\\\/home\\\/container\\\/murmur.log\",\n            \"port\": \"{{server.build.default.port}}\",\n            \"host\": \"\",\n            \"users\": \"{{server.build.env.MAX_USERS}}\"\n        }\n    }\n}",
+        "startup": "{\n    \"done\": \"Server listening on\"\n}",
+        "logs": "[]",
+        "stop": "^C"
+    },
+    "scripts": {
+        "installation": {
+            "script": "#!\/bin\/ash\n\nif [ ! -d \/mnt\/server\/ ]; then\n    mkdir \/mnt\/server\/\nfi\n\ncd \/mnt\/server\n\nFILE=\/mnt\/server\/murmur.ini\nif [ -f \"$FILE\" ]; then\n    echo \"Config file already exists.\"\nelse \n    echo \"Downloading the config file.\"\n    apk add --no-cache murmur\n    cp \/etc\/murmur.ini \/mnt\/server\/murmur.ini\n    apk del murmur\nfi\necho \"done\"",
+            "container": "ghcr.io\/pelican-eggs\/installers:alpine",
+            "entrypoint": "ash"
+        }
+    },
+    "variables": [
+        {
+            "name": "Maximum Users",
+            "description": "Maximum concurrent users on the mumble server.",
+            "env_variable": "MAX_USERS",
+            "default_value": "100",
+            "user_viewable": true,
+            "user_editable": false,
+            "rules": "required|numeric|digits_between:1,5",
+            "field_type": "text"
+        }
+    ]
+}
