@@ -1,7 +1,7 @@
 _comment: 'DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PANEL'
 meta:
   version: PLCN_v3
-  update_url: 'https://raw.githubusercontent.com/pelican-eggs/voice/refs/heads/main/ts3_manager/egg-t-s3-manager.json'
+  update_url: 'https://raw.githubusercontent.com/pelican-eggs/voice/refs/heads/main/ts3_manager/egg-t-s3-manager.yaml'
 exported_at: '2026-01-02T22:25:20+00:00'
 name: 'TS3 Manager'
 author: eggs@goover.dev
