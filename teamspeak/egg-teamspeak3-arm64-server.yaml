@@ -1,7 +1,7 @@
 _comment: 'DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PANEL'
 meta:
   version: PLCN_v3
-  update_url: 'https://raw.githubusercontent.com/pelican-eggs/voice/refs/heads/main/teamspeak_ARM64/egg-teamspeak3-arm64-server.yaml'
+  update_url: 'https://raw.githubusercontent.com/pelican-eggs/voice/refs/heads/main/teamspeak/egg-teamspeak3-arm64-server.yaml'
 exported_at: '2026-01-02T22:25:14+00:00'
 name: 'Teamspeak3 Server ARM64'
 author: josdekurk@gmail.com
