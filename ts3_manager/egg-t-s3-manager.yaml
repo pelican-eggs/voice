@@ -1,0 +1,94 @@
+_comment: 'DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PANEL'
+meta:
+  version: PLCN_v3
+  update_url: 'https://raw.githubusercontent.com/pelican-eggs/voice/refs/heads/main/ts3_manager/egg-t-s3-manager.yaml'
+exported_at: '2026-01-02T22:25:20+00:00'
+name: 'TS3 Manager'
+author: eggs@goover.dev
+uuid: f9e543c3-e8a5-4fb8-954b-f4b64c705ee3
+description: 'The Open Source Webinterface For TeamSpeak Servers'
+image: 'data:image/png;base64,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'
+tags: {  }
+features: {  }
+docker_images:
+  Debian: 'ghcr.io/pelican-eggs/yolks:debian'
+file_denylist: {  }
+startup_commands:
+  Default: './start_ts3-manager -p ${SERVER_PORT}'
+config:
+  files: {  }
+  startup:
+    done: 'Server listening on'
+  logs: {  }
+  stop: ^C
+scripts:
+  installation:
+    script: |-
+      #!/bin/bash
+      ## env
+      export HOME=/mnt/server
+      cd $HOME
+
+      ## get release info and download links
+      LATEST_RELEASE=$(curl -L -s -H 'Accept: application/json' https://github.com/${GITHUB_PACKAGE}/releases/latest)
+      LATEST_VERSION=$(echo $LATEST_RELEASE | sed -e 's/.*"tag_name":"\([^"]*\)".*/\1/')
+
+      if [ -z "${VERSION}" ] || [ "${VERSION}" == "latest" ]; then
+          DOWNLOAD_LINK="https://github.com/${GITHUB_PACKAGE}/releases/download/$LATEST_VERSION/$MATCH-$LATEST_VERSION"
+      else 
+          DOWNLOAD_LINK="https://github.com/${GITHUB_PACKAGE}/releases/download/v$VERSION/$MATCH-$VERSION-v$VERSION"
+      fi
+
+      echo $DOWNLOAD_LINK
+      wget $DOWNLOAD_LINK
+
+      if [ -z "${VERSION}" ] || [ "${VERSION}" == "latest" ]; then
+          mv -f $MATCH-$LATEST_VERSION $HOME/start_ts3-manager
+          chmod +x start_ts3-manager
+      else
+          mv -f $MATCH-v$VERSION $HOME/start_ts3-manager
+          chmod start_ts3-manager
+      fi
+
+      echo "-------------------------------------------------------"
+      echo "Installation completed"
+      echo "-------------------------------------------------------"
+    container: 'ghcr.io/pelican-eggs/installers:debian'
+    entrypoint: bash
+variables:
+  -
+    sort: 1
+    name: GITHUB_PACKAGE
+    description: ''
+    env_variable: GITHUB_PACKAGE
+    default_value: joni1802/ts3-manager
+    user_viewable: false
+    user_editable: false
+    rules:
+      - required
+      - string
+      - 'max:50'
+  -
+    sort: 3
+    name: MATCH
+    description: ''
+    env_variable: MATCH
+    default_value: ts3-manager-linux-x64
+    user_viewable: false
+    user_editable: false
+    rules:
+      - required
+      - string
+      - 'max:50'
+  -
+    sort: 2
+    name: VERSION
+    description: ''
+    env_variable: VERSION
+    default_value: latest
+    user_viewable: true
+    user_editable: true
+    rules:
+      - required
+      - string
+      - 'max:30'
