@@ -1,4 +1,4 @@
-# TeamSpeak ARM64
+# TeamSpeak
 
 ## From their [Website](https://www.teamspeak.com/)
 
