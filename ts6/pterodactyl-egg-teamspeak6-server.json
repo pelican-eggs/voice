@@ -48,7 +48,7 @@
             "default_value": "latest",
             "user_viewable": true,
             "user_editable": true,
-            "rules": "",
+            "rules": "nullable|string",
             "field_type": "text"
         },
         {
