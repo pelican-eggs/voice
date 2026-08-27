@@ -19,4 +19,4 @@ one Port required to run the server.
 
 ## Install notes
 
-Connect with your IP from your Pteroserver and the assigned Port. Add your IP to TS Server Withlist
+Connect with your IP from your Peliserver and the assigned Port. Add your IP to TS Server Withlist
