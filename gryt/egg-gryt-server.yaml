@@ -24,7 +24,7 @@ docker_images:
   Node.js 24: 'ghcr.io/pelican-eggs/yolks:nodejs_24'
 file_denylist: [  ]
 startup_commands:
-  Default: 'if [ -z "$JWT_SECRET" ]; then [ -f .jwt_secret ] || head -c 48 /dev/urandom | base64 > .jwt_secret; export JWT_SECRET="$(cat .jwt_secret)"; fi; ./gryt_sfu & if [ "$IMAGE_WORKER_ENABLED" != "false" ]; then node --env-file=config.env image-worker/dist/index.js & fi; exec node --env-file=config.env server/dist/index.js'
+  Default: 'export SERVER_VERSION="$(node -p "require(process.argv[1]).version" ./server/package.json)"; if [ -z "$JWT_SECRET" ]; then [ -f .jwt_secret ] || head -c 48 /dev/urandom | base64 > .jwt_secret; export JWT_SECRET="$(cat .jwt_secret)"; fi; ./gryt_sfu & if [ "$IMAGE_WORKER_ENABLED" != "false" ]; then node --env-file=config.env image-worker/dist/index.js & fi; exec node --env-file=config.env server/dist/index.js'
 config:
   files:
     config.env:
