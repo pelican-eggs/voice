@@ -2,7 +2,7 @@ _comment: 'DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PANEL'
 meta:
   version: PLCN_v3
   update_url: 'https://raw.githubusercontent.com/pelican-eggs/voice/refs/heads/main/ts6/egg-teamspeak6-server.yaml'
-exported_at: '2026-01-02T22:25:24+00:00'
+exported_at: '2026-10-04T19:18:26+00:00'
 name: 'Teamspeak6 Server'
 author: 161775222+JoanFo1456@users.noreply.github.com
 uuid: a6993632-ecbf-4036-9caa-12ffeff50a4a
@@ -32,9 +32,7 @@ scripts:
       set -euo pipefail
 
       REPO="teamspeak/teamspeak6-server"
-      ARCH="linux_amd64"
       TARGET_DIR="/mnt/server"
-
 
       gh_api() {
           curl -sL "$1"
@@ -42,27 +40,29 @@ scripts:
 
       if [ -z "${TS_VERSION:-}" ] || [ "${TS_VERSION}" = "latest" ]; then
           echo "► Fetching latest Teamspeak 6 release info from GitHub…"
-          RELEASE_JSON="$(gh_api "https://api.github.com/repos/${REPO}/releases" | jq '.[0]')"
+          RELEASE_JSON="$(gh_api "https://api.github.com/repos/${REPO}/releases/latest")"
       else
           echo "► Fetching release info for tag v${TS_VERSION}…"
-          RELEASE_JSON="$(gh_api "https://api.github.com/repos/${REPO}/releases" \
-              | jq --arg tag "v${TS_VERSION}" -c '[.[] | select(.tag_name==$tag)][0]')"
+          RELEASE_JSON="$(gh_api "https://api.github.com/repos/${REPO}/releases/tags/v${TS_VERSION}")"
       fi
 
       ASSET_URL="$(echo "$RELEASE_JSON" \
-          | jq -r --arg arch "$ARCH" '.assets[]
-              | select(.name | test("linux_amd64.*\\.tar\\.bz2$"))
+          | jq -r '.assets[]
+              | select(.name | test("linux-amd64\\.tar\\.xz$"))
               | .browser_download_url')"
 
       if [ -z "$ASSET_URL" ] || [ "$ASSET_URL" = "null" ]; then
-          echo "✗ No linux_amd64 tarball found in this release."
+          echo "✗ No linux-amd64 tarball found in this release."
           exit 1
       fi
 
       echo "► Downloading and extracting: $ASSET_URL"
 
+      echo "► Cleaning target directory…"
+      rm -f "$TARGET_DIR/tsserver"
+
       cd "$TARGET_DIR"
-      gh_api "$ASSET_URL" | tar -xvj --strip-components=1
+      gh_api "$ASSET_URL" | tar -xvJ
     container: 'ghcr.io/pelican-eggs/installers:alpine'
     entrypoint: ash
 variables:
