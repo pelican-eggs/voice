@@ -1,6 +1,6 @@
 # How to contribute
 
-You can contribute by either creating a new pull request or testing [existing pull requests](https://github.com/parkervcp/eggs/pulls) and commenting on whether the egg works for you or not. Testing is very important and helpful!
+You can contribute by either creating a new pull request or testing [existing pull requests](https://github.com/pelican-eggs/voice/pulls) and commenting on whether the egg works for you or not. Testing is very important and helpful!
 
 ## General rules for eggs
 
@@ -18,7 +18,7 @@ You can contribute by either creating a new pull request or testing [existing pu
     Only use what is absolutely needed. The [yolks install images](https://github.com/pelican-eggs/yolks#installation-images) already contain the most basic packages that speeds up the installation process.
 
 5. Use the stock images.
-    If you need something in an image, open a PR in [my yolks repo](https://github.com/pelican-eggs/yolks) where it can be reviewed and built. Self-hosted or third-party images won't be accepted for security reasons.
+    If you need something in an image, open a PR in [the yolks repo](https://github.com/pelican-eggs/yolks) where it can be reviewed and built. Self-hosted or third-party images won't be accepted for security reasons.
 
 6. Export eggs from the panel
     We ask that you use the panel to manage and export eggs.
@@ -30,11 +30,11 @@ Look at existing eggs to see how they work. In most cases, you can take the exis
 
 Use existing Docker images for your egg. You can find them in [Pelican Yolks](https://github.com/pelican-eggs/yolks).
 
-We have a collection of [existing install script snippets](https://github.com/parkervcp/eggs/tree/master/scripts) that you can use.
+We have a collection of [existing install script snippets](https://github.com/pelican-eggs/tooling/tree/main/scripts) that you can use.
 
 ## Step 1
 
-### Be aware of the pelican install process
+### Be aware of the Pelican install process
 
 The Pelican install process is fairly simple once you know it.
 
