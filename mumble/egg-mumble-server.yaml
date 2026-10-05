@@ -4,7 +4,7 @@ meta:
   update_url: 'https://raw.githubusercontent.com/pelican-eggs/voice/refs/heads/main/mumble/egg-mumble-server.yaml'
 exported_at: '2026-08-16T22:16:20+00:00'
 name: 'Mumble Server'
-author: support@pelican.dev
+author: team@pelican.dev
 uuid: 727ee758-7fb2-4979-972b-d3eba4e1e9f0
 description: |-
   Mumble is an open source, low-latency, high quality voice chat software primarily intended for use

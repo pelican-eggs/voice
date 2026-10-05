@@ -6,7 +6,7 @@
     },
     "exported_at": "2025-05-08T23:15:50-04:00",
     "name": "Mumble Server",
-    "author": "support@pterodactyl.io",
+    "author": "team@pelican.dev",
     "description": "Mumble is an open source, low-latency, high quality voice chat software primarily intended for use while gaming.",
     "features": null,
     "docker_images": {
