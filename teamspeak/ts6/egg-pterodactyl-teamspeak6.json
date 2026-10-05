@@ -4,11 +4,11 @@
         "version": "PTDL_v2",
         "update_url": null
     },
-    "exported_at": "2026-10-04T19:18:26+00:00",
-    "name": "Teamspeak6 Server",
+    "exported_at": "2026-10-05T20:10:44+00:00",
+    "name": "TeamSpeak 6",
     "author": "161775222+JoanFo1456@users.noreply.github.com",
-    "description": "VoIP software designed with security in mind, featuring crystal clear voice quality, endless customization options, and scalabilty up to thousands of simultaneous users.",
-    "features": null,
+    "description": "VoIP software designed with security in mind, featuring crystal clear voice quality, endless customization options, and scalability up to thousands of simultaneous users.",
+    "features": [],
     "docker_images": {
         "Debian": "ghcr.io\/pelican-eggs\/yolks:debian"
     },
@@ -30,72 +30,52 @@
     "variables": [
         {
             "name": "Server Version",
-            "description": "The version of Teamspeak 6 to use when running the server. Also used on reinstall.",
+            "description": "The version of TeamSpeak 6 to use when running the server. Also used on reinstall.",
             "env_variable": "TS_VERSION",
             "default_value": "latest",
             "user_viewable": true,
             "user_editable": true,
-            "rules": {},
+            "rules": "required|string",
             "field_type": "text"
         },
         {
-            "name": "Tsserver File Transfer Port",
-            "description": "The Teamspeak file transfer port",
+            "name": "License Accepted",
+            "description": "Enable to confirm that you have read and accepted the server license agreement.",
+            "env_variable": "TSSERVER_LICENSE_ACCEPTED",
+            "default_value": "0",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "boolean",
+            "field_type": "text"
+        },
+        {
+            "name": "File Transfer Port",
+            "description": "The TeamSpeak file transfer port",
             "env_variable": "TSSERVER_FILE_TRANSFER_PORT",
             "default_value": "30033",
             "user_viewable": true,
-            "user_editable": true,
+            "user_editable": false,
             "rules": "required|integer|between:1025,65535",
             "field_type": "text"
         },
         {
-            "name": "Query Port",
-            "description": "The Teamspeak Query Port",
-            "env_variable": "QUERY_PORT",
-            "default_value": "10011",
-            "user_viewable": true,
-            "user_editable": true,
-            "rules": "required|integer|between:1025,65535",
-            "field_type": "text"
-        },
-        {
-            "name": "Tsserver Query ssh Port",
+            "name": "Query SSH Port",
             "description": "TCP Port opened for ServerQuery connections using SSH",
             "env_variable": "TSSERVER_QUERY_SSH_PORT",
             "default_value": "10022",
             "user_viewable": true,
-            "user_editable": true,
+            "user_editable": false,
             "rules": "required|integer|between:1025,65535",
             "field_type": "text"
         },
         {
-            "name": "Tsserver Query Http Port",
-            "description": "TCP Port opened for ServerQuery connections using http",
+            "name": "Query HTTP Port",
+            "description": "TCP Port opened for ServerQuery connections using HTTP",
             "env_variable": "TSSERVER_QUERY_HTTP_PORT",
             "default_value": "10080",
             "user_viewable": true,
-            "user_editable": true,
+            "user_editable": false,
             "rules": "required|integer|between:1025,65535",
-            "field_type": "text"
-        },
-        {
-            "name": "Tsserver Default Port",
-            "description": "The server default port",
-            "env_variable": "TSSERVER_DEFAULT_PORT",
-            "default_value": "9987",
-            "user_viewable": true,
-            "user_editable": true,
-            "rules": "required|integer|between:1024,65535",
-            "field_type": "text"
-        },
-        {
-            "name": "Tsserver License Accepted",
-            "description": "If you accept the license or want to view it. (Values: accept, view)",
-            "env_variable": "TSSERVER_LICENSE_ACCEPTED",
-            "default_value": "accept",
-            "user_viewable": true,
-            "user_editable": true,
-            "rules": "required|string|max:12",
             "field_type": "text"
         }
     ]
