@@ -1,17 +1,13 @@
 # TeamSpeak
 
-## From their [Website](https://www.teamspeak.com/)
+This folder is for all TeamSpeak versions and tools.
 
+### Servers
 
-## Server Ports
+* [TeamSpeak 3](ts3)
+  * [ARM64 Version](ts3/arm64)
+* [TeamSpeak 6](ts6)
 
-Ports required to run the server in a table format.
+### Tools
 
-| Port    | default |
-|---------|---------|
-| Voice   | 9987    |
-| Query   | 10011   |
-| File    | 30033   |
-
-### arm64
-* The arm64 may not perform as expected due to the amd64 to arm emulaton.
+* [TS3-Manager](ts3_manager)
