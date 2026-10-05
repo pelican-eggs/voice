@@ -1,6 +1,7 @@
 # Voice Servers
 
 * [Gryt](/gryt)
-* [Teamspeak_ARM64](/teamspeak_ARM64)
+* [Teamspeak](/teamspeak)
 * [TS3-Manager](/ts3_manager)
 * [TeamSpeak6](/ts6)
+* [Mumble](/mumble)
