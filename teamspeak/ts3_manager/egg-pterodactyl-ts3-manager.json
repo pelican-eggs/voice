@@ -4,10 +4,10 @@
         "version": "PTDL_v2",
         "update_url": null
     },
-    "exported_at": "2026-01-02T22:27:17+00:00",
+    "exported_at": "2026-10-05T20:10:44+00:00",
     "name": "TS3 Manager",
     "author": "eggs@goover.dev",
-    "description": "The Open Source Webinterface For TeamSpeak Servers",
+    "description": "The Open Source web interface For TeamSpeak Servers",
     "features": null,
     "docker_images": {
         "Debian": "ghcr.io\/pelican-eggs\/yolks:debian"

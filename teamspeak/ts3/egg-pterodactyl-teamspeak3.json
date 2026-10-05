@@ -4,10 +4,10 @@
         "version": "PTDL_v2",
         "update_url": null
     },
-    "exported_at": "2026-01-20T22:17:34+00:00",
-    "name": "Teamspeak3 Server",
+    "exported_at": "2026-10-05T20:10:44+00:00",
+    "name": "TeamSpeak 3",
     "author": "panel@example.com",
-    "description": "VoIP software designed with security in mind, featuring crystal clear voice quality, endless\ncustomization options, and scalabilty up to thousands of simultaneous users.",
+    "description": "VoIP software designed with security in mind, featuring crystal clear voice quality, endless\ncustomization options, and scalability up to thousands of simultaneous users.",
     "features": null,
     "docker_images": {
         "Debian": "ghcr.io\/pelican-eggs\/yolks:debian"
@@ -30,7 +30,7 @@
     "variables": [
         {
             "name": "File Transfer Port",
-            "description": "The Teamspeak file transfer port",
+            "description": "The TeamSpeak file transfer port",
             "env_variable": "FILE_TRANSFER",
             "default_value": "30033",
             "user_viewable": true,
@@ -50,7 +50,7 @@
         },
         {
             "name": "Query Port",
-            "description": "The Teamspeak Query Port",
+            "description": "The TeamSpeak Query Port",
             "env_variable": "QUERY_PORT",
             "default_value": "10011",
             "user_viewable": true,
@@ -80,7 +80,7 @@
         },
         {
             "name": "Server Version",
-            "description": "The version of Teamspeak 3 to use when running the server.",
+            "description": "The version of TeamSpeak 3 to use when running the server.",
             "env_variable": "TS_VERSION",
             "default_value": "latest",
             "user_viewable": true,

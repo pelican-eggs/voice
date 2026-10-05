@@ -1,0 +1,82 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v2",
+        "update_url": null
+    },
+    "exported_at": "2026-10-05T20:37:01+00:00",
+    "name": "TeamSpeak 6",
+    "author": "161775222+JoanFo1456@users.noreply.github.com",
+    "description": "VoIP software designed with security in mind, featuring crystal clear voice quality, endless customization options, and scalability up to thousands of simultaneous users.",
+    "features": [],
+    "docker_images": {
+        "Debian": "ghcr.io\/pelican-eggs\/yolks:debian"
+    },
+    "file_denylist": [],
+    "startup": ".\/tsserver --filetransfer-port {{TSSERVER_FILE_TRANSFER_PORT}} --query-http-port {{TSSERVER_QUERY_HTTP_PORT}} --query-ssh-port {{TSSERVER_QUERY_SSH_PORT}} --default-voice-port {{SERVER_PORT}}",
+    "config": {
+        "files": "{}",
+        "startup": "{\n    \"done\": \"listening on 0.0.0.0:\"\n}",
+        "logs": "{}",
+        "stop": "^C"
+    },
+    "scripts": {
+        "installation": {
+            "script": "#!\/bin\/ash\n\nset -euo pipefail\n\nREPO=\"teamspeak\/teamspeak6-server\"\nTARGET_DIR=\"\/mnt\/server\"\n\ngh_api() {\n    curl -sL \"$1\"\n}\n\nif [ -z \"${TS_VERSION:-}\" ] || [ \"${TS_VERSION}\" = \"latest\" ]; then\n    echo \"► Fetching latest Teamspeak 6 release info from GitHub…\"\n    RELEASE_JSON=\"$(gh_api \"https:\/\/api.github.com\/repos\/${REPO}\/releases\/latest\")\"\nelse\n    echo \"► Fetching release info for tag v${TS_VERSION}…\"\n    RELEASE_JSON=\"$(gh_api \"https:\/\/api.github.com\/repos\/${REPO}\/releases\/tags\/v${TS_VERSION}\")\"\nfi\n\nASSET_URL=\"$(echo \"$RELEASE_JSON\" \\\n    | jq -r '.assets[]\n        | select(.name | test(\"linux-amd64\\\\.tar\\\\.xz$\"))\n        | .browser_download_url')\"\n\nif [ -z \"$ASSET_URL\" ] || [ \"$ASSET_URL\" = \"null\" ]; then\n    echo \"✗ No linux-amd64 tarball found in this release.\"\n    exit 1\nfi\n\necho \"► Downloading and extracting: $ASSET_URL\"\n\necho \"► Cleaning target directory…\"\nrm -f \"$TARGET_DIR\/tsserver\"\n\ncd \"$TARGET_DIR\"\ngh_api \"$ASSET_URL\" | tar -xvJ\n",
+            "container": "ghcr.io\/pelican-eggs\/installers:alpine",
+            "entrypoint": "ash"
+        }
+    },
+    "variables": [
+        {
+            "name": "Server Version",
+            "description": "The version of TeamSpeak 6 to use when running the server. Also used on reinstall.",
+            "env_variable": "TS_VERSION",
+            "default_value": "latest",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string",
+            "field_type": "text"
+        },
+        {
+            "name": "License Accepted",
+            "description": "Change to 'accept' to confirm that the end-user has read and accepted the server license agreement. Change to 'view' to view the agreement in the console before accepting.",
+            "env_variable": "TSSERVER_LICENSE_ACCEPTED",
+            "default_value": "deny",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|in:deny,accept,view",
+            "field_type": "text"
+        },
+        {
+            "name": "File Transfer Port",
+            "description": "The TeamSpeak file transfer port",
+            "env_variable": "TSSERVER_FILE_TRANSFER_PORT",
+            "default_value": "30033",
+            "user_viewable": true,
+            "user_editable": false,
+            "rules": "required|integer|between:1025,65535",
+            "field_type": "text"
+        },
+        {
+            "name": "Query SSH Port",
+            "description": "TCP Port opened for ServerQuery connections using SSH",
+            "env_variable": "TSSERVER_QUERY_SSH_PORT",
+            "default_value": "10022",
+            "user_viewable": true,
+            "user_editable": false,
+            "rules": "required|integer|between:1025,65535",
+            "field_type": "text"
+        },
+        {
+            "name": "Query HTTP Port",
+            "description": "TCP Port opened for ServerQuery connections using HTTP",
+            "env_variable": "TSSERVER_QUERY_HTTP_PORT",
+            "default_value": "10080",
+            "user_viewable": true,
+            "user_editable": false,
+            "rules": "required|integer|between:1025,65535",
+            "field_type": "text"
+        }
+    ]
+}
