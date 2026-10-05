@@ -4,7 +4,7 @@
         "version": "PTDL_v2",
         "update_url": null
     },
-    "exported_at": "2026-10-05T20:10:44+00:00",
+    "exported_at": "2026-10-05T20:37:01+00:00",
     "name": "TeamSpeak 6",
     "author": "161775222+JoanFo1456@users.noreply.github.com",
     "description": "VoIP software designed with security in mind, featuring crystal clear voice quality, endless customization options, and scalability up to thousands of simultaneous users.",
@@ -40,12 +40,12 @@
         },
         {
             "name": "License Accepted",
-            "description": "Enable to confirm that you have read and accepted the server license agreement.",
+            "description": "Change to 'accept' to confirm that the end-user has read and accepted the server license agreement. Change to 'view' to view the agreement in the console before accepting.",
             "env_variable": "TSSERVER_LICENSE_ACCEPTED",
-            "default_value": "0",
+            "default_value": "deny",
             "user_viewable": true,
             "user_editable": true,
-            "rules": "boolean",
+            "rules": "required|string|in:deny,accept,view",
             "field_type": "text"
         },
         {
