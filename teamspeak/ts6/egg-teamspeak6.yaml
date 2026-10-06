@@ -1,8 +1,8 @@
 _comment: 'DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PANEL'
 meta:
   version: PLCN_v3
-  update_url: 'https://raw.githubusercontent.com/pelican-eggs/voice/refs/heads/main/ts6/egg-teamspeak6.yaml'
-exported_at: '2026-10-05T20:37:01+00:00'
+  update_url: 'https://raw.githubusercontent.com/pelican-eggs/voice/refs/heads/main/teamspeak/ts6/egg-teamspeak6.yaml'
+exported_at: '2026-10-06T16:44:38+00:00'
 name: 'TeamSpeak 6'
 author: 161775222+JoanFo1456@users.noreply.github.com
 uuid: a6993632-ecbf-4036-9caa-12ffeff50a4a
